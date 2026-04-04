@@ -193,7 +193,7 @@ fig3 <- ggplot(icp_plot, aes(x = Temperature, y = Value,
   scale_fill_manual(values = biochar_colours, name = "Biochar Type") +
   labs(
     x = expression("Pyrolysis Temperature ("*degree*"C)"),
-    y = "Concentration (g/kg)"
+    y = "Concentration (mg/kg)"
   ) +
   dissertation_theme
 
@@ -277,7 +277,7 @@ fig_icp_other <- ggplot(icp_other_plot,
   scale_fill_manual(values = biochar_colours, name = "Biochar Type") +
   labs(
     x = expression("Pyrolysis Temperature ("*degree*"C)"),
-    y = "Concentration (g/kg)"
+    y = "Concentration (mg/kg)"
   ) +
   dissertation_theme
 
