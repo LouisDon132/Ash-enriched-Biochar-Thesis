@@ -101,6 +101,9 @@ print(fig1)
 
 
 
+
+
+
 #FIGURE 2: ELEMENTAL ANALYSIS GROUPED BAR CHART
 elem_long <- elemental %>%
   pivot_longer(
@@ -143,7 +146,11 @@ print(fig2)
 
 
 
-# --- 2c. ICP-OES Data
+
+
+
+
+#2c. ICP-OES Data
 # 1 corrected to 6 
 icp <- data.frame(
   Temperature = rep(c("450", "600", "700"), each = 2),
@@ -199,11 +206,13 @@ fig3 <- ggplot(icp_plot, aes(x = Temperature, y = Value,
 
 print(fig3)
 
-#FIGURE: ICP-OES — Na, Si, Al, Fe 
+
+
+#FIGURE: ICP-OES Na, Si, Al, Fe 
 
 
 
-# Reuse your colour scheme and theme
+# Reuse colour scheme and theme
 biochar_colours <- c("Standard" = "#E67E22",
                      "Ash-enriched" = "#27AE60")
 
@@ -329,9 +338,9 @@ ratios %>%
 # PART 3: VAN KREVELEN DIAGRAM
 
 # The position on the diagram tells the degree of carbonisation.
-# elemental analysis — it show biochar chemistry.
+# elemental analysis it show biochar chemistry.
 
-# Set up colours (matching your other figures)
+# Set up colours 
 biochar_colours <- c("Standard" = "#E67E22",        # orange
                      "Ash-enriched" = "#27AE60")     # green
 
@@ -351,19 +360,15 @@ fig_vk <- ggplot(ratios, aes(x = OC_ratio, y = HC_ratio,
   scale_shape_manual(values = temp_shapes,
                      name = expression("Temperature ("*degree*"C)")) +
   
-  # Add reference zones (commonly shown on Van Krevelen diagrams)
-  # These indicate the stability thresholds from Spokas (2010)
-  annotate("rect", xmin = 0, xmax = 0.2, ymin = 0, ymax = 0.6,
+  # Add reference zones 
+  annotate("rect", xmin = 0, xmax = 0.4, ymin = 0, ymax = 0.6,
            fill = "green", alpha = 0.08) +
-  annotate("text", x = 0.10, y = 0.55, label = "Highly stable",
+  annotate("text", x = 0.10, y = 0.55, label = "Suitable biochar",
            size = 3, colour = "grey40", fontface = "italic") +
   
-  annotate("rect", xmin = 0.2, xmax = 0.6, ymin = 0, ymax = 1.2,
-           fill = "yellow", alpha = 0.06) +
-  annotate("text", x = 0.40, y = 1.15, label = "Moderately stable",
-           size = 3, colour = "grey40", fontface = "italic") +
+
   
-  # Add an arrow showing the direction of increasing carbonisation
+  # arrow showing the direction of increasing carbonisation
   annotate("segment", x = 0.55, y = 1.0, xend = 0.15, yend = 0.25,
            arrow = arrow(length = unit(0.25, "cm")),
            colour = "grey50", linewidth = 0.5) +
@@ -377,7 +382,7 @@ fig_vk <- ggplot(ratios, aes(x = OC_ratio, y = HC_ratio,
   ) +
   theme_minimal() +
   theme(
-    text = element_text(size = 11),
+    text = element_text(size = 20),
     axis.title = element_text(size = 11),
     axis.text = element_text(size = 10, colour = "black"),
     legend.title = element_text(size = 10),
