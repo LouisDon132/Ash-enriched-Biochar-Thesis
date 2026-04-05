@@ -68,9 +68,9 @@ prop_labels <- c(
   "VM" = "Volatile Matter (%)", "FC" = "Fixed Carbon (%)", 
   "Ash" = "Ash Content (%)",
   "HC_ratio" = "H/C Ratio", "OC_ratio" = "O/C Ratio",
-  "K" = "K (g/kg)", "Ca" = "Ca (g/kg)", "Mg" = "Mg (g/kg)",
-  "Na" = "Na (g/kg)", "P" = "P (g/kg)", "Si" = "Si (g/kg)",
-  "Al" = "Al (g/kg)", "Fe" = "Fe (g/kg)"
+  "K" = "K (mg/kg)", "Ca" = "Ca (mg/kg)", "Mg" = "Mg (mg/kg)",
+  "Na" = "Na (mg/kg)", "P" = "P (mg/kg)", "Si" = "Si (mg/kg)",
+  "Al" = "Al (mg/kg)", "Fe" = "Fe (mg/kg)"
 )
 
 resp_labels <- c(
@@ -92,8 +92,8 @@ cor_melted$Property <- factor(cor_melted$Property,
                                 # Molar ratios
                                 "H/C Ratio", "O/C Ratio",
                                 # ICP-OES
-                                "K (g/kg)", "Ca (g/kg)", "Mg (g/kg)", "Na (g/kg)",
-                                "P (g/kg)", "Si (g/kg)", "Al (g/kg)", "Fe (g/kg)"
+                                "K (mg/kg)", "Ca (mg/kg)", "Mg (mg/kg)", "Na (mg/kg)",
+                                "P (mg/kg)", "Si (mg/kg)", "Al (mg/kg)", "Fe (mg/kg)"
                               )))
 
 cor_melted$Response <- factor(cor_melted$Response,
